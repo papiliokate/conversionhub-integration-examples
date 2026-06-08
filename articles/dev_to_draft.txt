@@ -49,4 +49,4 @@ The Results
 Traditional captchas are known to cause abandonment. By switching to a gamified alternative, you remove the primary point of cognitive friction in your signup flow. 
 
 If you are losing users at the finish line, look at your form friction. You can find the full integration examples for both Vanilla JS and React in the conversion.business Integration Examples Repository here:
-https://github.com/papiliokate/conversion.business-integration-examples
+https://github.com/papiliokate/conversionhub-integration-examples
