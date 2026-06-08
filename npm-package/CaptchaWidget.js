@@ -1,65 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 export const GamifiedCaptcha = ({ 
   siteKey = "ch_pub_demo_testkey_12345", 
-  onHumanVerified, 
-  onError,
+  onHumanVerified,
+  gameUrl = "https://conversion.business/sunny-day-maze/",
   className = "conversion-business-widget",
   style = {}
 }) => {
-  const [hasError, setHasError] = useState(false);
   const isInvalidKey = !siteKey || siteKey === "ch_pub_demo_testkey_12345";
 
   useEffect(() => {
-    // 1. SSR Safety Check
-    if (typeof window === 'undefined' || typeof document === 'undefined') {
+    // SSR Safety Check
+    if (typeof window === 'undefined') {
       return;
     }
 
-    // 2. Funnel Logic (Console Warning for missing/demo keys)
     if (isInvalidKey) {
       console.error("Conversion.Business Error: Invalid Site Key. Please register at https://conversion.business to obtain a valid API key.");
-      setHasError(true);
-      return;
     }
 
-    const scriptId = 'conversion-business-sdk';
-    let script = document.getElementById(scriptId);
-    let isNewScript = false;
-
-    // 3. Singleton Script Loading
-    if (!script) {
-      script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://conversion-business-widgets.web.app/sdk.js';
-      script.async = true;
-      isNewScript = true;
-
-      // 4. CSP/Network Error Handling (Fail-Open)
-      script.onerror = (e) => {
-        console.error("Conversion.Business Error: Failed to load SDK. Check your Content Security Policy or AdBlocker.", e);
-        if (onError) onError(e);
-      };
-
-      document.body.appendChild(script);
-    }
-
-    const verificationHandler = (e) => {
-      if (onHumanVerified && e.detail?.token) {
-        onHumanVerified(e.detail.token);
+    const verificationHandler = (event) => {
+      // Ensure we only process events from the conversion.business iframe
+      if (event.data && event.data.type === 'oops_captcha_solved') {
+        if (onHumanVerified && event.data.payload) {
+          onHumanVerified(event.data.payload);
+        }
       }
     };
 
-    document.addEventListener('conversion.business:verified', verificationHandler);
+    window.addEventListener('message', verificationHandler);
 
     return () => {
-      document.removeEventListener('conversion.business:verified', verificationHandler);
-      // We do not remove the script tag because other instances on the page might need it.
+      // Memory leak cleanup when component unmounts
+      window.removeEventListener('message', verificationHandler);
     };
-  }, [siteKey, onHumanVerified, onError, isInvalidKey]);
+  }, [siteKey, onHumanVerified, isInvalidKey]);
 
-  // 5. Funnel Logic (Visual Fallback for missing/demo keys)
-  if (hasError || isInvalidKey) {
+  // Visual Fallback for missing/demo keys (The Funnel Trap)
+  if (isInvalidKey) {
     return (
       <div style={{ color: '#d32f2f', border: '1px solid #d32f2f', padding: '12px', borderRadius: '4px', backgroundColor: '#fff', fontFamily: 'sans-serif', ...style }} className={className}>
         <strong>Widget Error:</strong> Valid API Key Required. <a href="https://conversion.business" target="_blank" rel="noopener noreferrer" style={{color: '#d32f2f', textDecoration: 'underline'}}>Get your free key here</a>.
@@ -67,13 +45,13 @@ export const GamifiedCaptcha = ({
     );
   }
 
-  // 6. Prop Forwarding to the actual widget container
+  // Exact iframe architecture matching portal.html
   return (
-    <div 
-      className={className} 
-      data-sitekey={siteKey} 
-      data-theme="light"
-      style={style}
+    <iframe 
+      className={className}
+      src={`${gameUrl}?mode=captcha&clientId=${siteKey}`} 
+      style={{ width: "100%", height: "400px", border: "none", borderRadius: "12px", ...style }}
+      title="Conversion.Business Validation"
     />
   );
 };
