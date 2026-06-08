@@ -9,9 +9,7 @@ Hey HN,
 
 We built ConversionHub because we noticed a massive drop-off on our SaaS signup forms specifically at the reCAPTCHA step. The cognitive friction of labeling traffic lights was costing us users.
 
-We replaced the legacy image-labeling tasks with short, gamified interactions (e.g., stacking a turtle on a log, or hitting a moving target). It takes less than 2 seconds to complete, provides the same level of bot protection through backend telemetry, and actually engages the user.
-
-Since making the switch, our form completion rates are up 14%.
+We replaced the legacy image-labeling tasks with short, gamified interactions (e.g., stacking a turtle on a log, or hitting a moving target). It takes less than 2 seconds to complete, provides the same level of bot protection through backend telemetry, and removes the primary point of cognitive friction for users.
 
 We just published our integration examples on GitHub so you can see how it drops into a React or Vanilla JS stack: 
 https://github.com/papiliokate/conversionhub-integration-examples
@@ -57,4 +55,4 @@ export const CaptchaWidget = ({ onVerify }) => {
 You can find the full documentation and more advanced examples in their Integration Repository:
 https://github.com/papiliokate/conversionhub-integration-examples
 
-This approach typically yields higher form completion rates without sacrificing bot protection.
+This approach removes cognitive friction, aiming to improve user experience without sacrificing bot protection.

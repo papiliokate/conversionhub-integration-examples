@@ -46,7 +46,7 @@ export const CaptchaWidget = ({ onVerify, siteKey = "ch_pub_demo_testkey_12345" 
 That’s it. It emits a custom event (`conversionhub:verified`) when the user successfully completes the interaction, and passes a secure token that you validate on your backend.
 
 The Results
-By switching from a traditional image captcha to a gamified alternative, we saw a 14% increase in successful signups in the first month. The bot traffic remained at zero.
+Traditional captchas are known to cause abandonment. By switching to a gamified alternative, you remove the primary point of cognitive friction in your signup flow. 
 
 If you are losing users at the finish line, look at your form friction. You can find the full integration examples for both Vanilla JS and React in the ConversionHub Integration Examples Repository here:
 https://github.com/papiliokate/conversionhub-integration-examples
