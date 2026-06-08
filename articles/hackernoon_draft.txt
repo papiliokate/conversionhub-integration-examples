@@ -49,4 +49,4 @@ Stop Punishing Users
 If a form has high drop-off rates, the bot protection should be evaluated. Removing cognitive friction from the signup flow is a high-leverage change.
 
 The source code for our vanilla JS and React integration wrappers is available in our public repository:
-https://github.com/papiliokate/conversion.business-integration-examples
+https://github.com/papiliokate/conversionhub-integration-examples
