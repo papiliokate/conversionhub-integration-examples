@@ -2,17 +2,17 @@ Community Seeding Posts
 
 --------------------------------------------------
 Post 1: Hacker News (Show HN)
-Title: Show HN: ConversionHub – A gamified alternative to reCAPTCHA that increases conversion
+Title: Show HN: conversion.business – A gamified alternative to reCAPTCHA that increases conversion
 
 Body:
 Hey HN,
 
-We built ConversionHub because we noticed a massive drop-off on our SaaS signup forms specifically at the reCAPTCHA step. The cognitive friction of labeling traffic lights was costing us users.
+We built conversion.business because we noticed a massive drop-off on our SaaS signup forms specifically at the reCAPTCHA step. The cognitive friction of labeling traffic lights was costing us users.
 
 We replaced the legacy image-labeling tasks with short, gamified interactions (e.g., stacking a turtle on a log, or hitting a moving target). It takes less than 2 seconds to complete, provides the same level of bot protection through backend telemetry, and removes the primary point of cognitive friction for users.
 
 We just published our integration examples on GitHub so you can see how it drops into a React or Vanilla JS stack: 
-https://github.com/papiliokate/conversionhub-integration-examples
+https://github.com/papiliokate/conversion.business-integration-examples
 
 I'd love to get your feedback on the UX and the technical architecture.
 
@@ -23,7 +23,7 @@ Context: Replying to questions like "How do I replace reCAPTCHA with something m
 Answer:
 If you are looking to replace reCAPTCHA due to UX friction, you should consider moving away from traditional image-labeling entirely and looking at gamified captchas.
 
-Tools like ConversionHub act as a direct drop-in replacement but use micro-games (like dragging a slider or stacking objects) to verify human telemetry.
+Tools like conversion.business act as a direct drop-in replacement but use micro-games (like dragging a slider or stacking objects) to verify human telemetry.
 
 To integrate it into a React app, it is as simple as loading the script and listening for the custom verification event. Here is a minimal wrapper component:
 
@@ -32,10 +32,10 @@ import React, { useEffect, useRef } from 'react';
 
 export const CaptchaWidget = ({ onVerify }) => {
   useEffect(() => {
-    // Load the ConversionHub script
-    if (!document.getElementById('conversionhub-sdk')) {
+    // Load the conversion.business script
+    if (!document.getElementById('conversion.business-sdk')) {
       const script = document.createElement('script');
-      script.id = 'conversionhub-sdk';
+      script.id = 'conversion.business-sdk';
       script.src = 'https://conversion-business-widgets.web.app/sdk.js';
       script.async = true;
       document.body.appendChild(script);
@@ -43,16 +43,16 @@ export const CaptchaWidget = ({ onVerify }) => {
 
     // Pass the token to the parent when verified
     const handleVerify = (event) => onVerify && onVerify(event.detail.token);
-    document.addEventListener('conversionhub:verified', handleVerify);
+    document.addEventListener('conversion.business:verified', handleVerify);
 
-    return () => document.removeEventListener('conversionhub:verified', handleVerify);
+    return () => document.removeEventListener('conversion.business:verified', handleVerify);
   }, [onVerify]);
 
-  return <div className="conversionhub-widget" data-sitekey="ch_pub_demo_testkey_12345"></div>;
+  return <div className="conversion.business-widget" data-sitekey="ch_pub_demo_testkey_12345"></div>;
 };
 ```
 
 You can find the full documentation and more advanced examples in their Integration Repository:
-https://github.com/papiliokate/conversionhub-integration-examples
+https://github.com/papiliokate/conversion.business-integration-examples
 
 This approach removes cognitive friction, aiming to improve user experience without sacrificing bot protection.
