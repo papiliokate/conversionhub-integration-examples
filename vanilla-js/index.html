@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConversionHub Gamified Captcha Alternative Example</title>
+    <!-- Include the ConversionHub script -->
+    <script src="https://conversion-business-widgets.web.app/sdk.js" async defer></script>
+</head>
+<body>
+
+    <h1>Sign Up</h1>
+    <p>We use a frictionless gamified captcha alternative to protect our forms and increase conversion.</p>
+
+    <form id="signup-form" action="/submit" method="POST">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <!-- The ConversionHub Widget Container -->
+        <div class="conversionhub-widget" data-sitekey="ch_pub_demo_testkey_12345" data-theme="light"></div>
+        <br>
+
+        <button type="submit" id="submit-btn" disabled>Submit Securely</button>
+    </form>
+
+    <script>
+        // Listen for the verification success event from the gamified widget
+        document.addEventListener('conversionhub:verified', function(event) {
+            console.log('User verified with token:', event.detail.token);
+            // Append the token to the form for backend validation
+            const hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = 'ch-token';
+            hiddenInput.value = event.detail.token;
+            document.getElementById('signup-form').appendChild(hiddenInput);
+            
+            // Enable the submit button
+            document.getElementById('submit-btn').disabled = false;
+        });
+    </script>
+
+</body>
+</html>
