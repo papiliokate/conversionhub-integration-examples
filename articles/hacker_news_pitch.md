@@ -2,7 +2,7 @@
 
 **Title:** Show HN: A zero-telemetry, gamified CAPTCHA for React
 
-**Link:** [https://github.com/oops-games-llc/conversionhub-integration-examples](https://github.com/oops-games-llc/conversionhub-integration-examples)
+**Link:** [https://github.com/papiliokate/conversionhub-integration-examples](https://github.com/papiliokate/conversionhub-integration-examples)
 
 ---
 
@@ -25,6 +25,6 @@ We wanted to prove humanity without tracking the human.
 
 We just released our official React NPM package (`react-gamified-captcha`) which compiles to standard ESModules/CommonJS and is fully SSR-safe for Next.js. 
 
-We know developers are rightly skeptical of third-party widgets, so we set up a live CodeSandbox where you can see exactly how much code it takes to implement and play the games right in the browser: [https://codesandbox.io/s/github/oops-games-llc/conversionhub-integration-examples/tree/master/sandbox-template](https://codesandbox.io/s/github/oops-games-llc/conversionhub-integration-examples/tree/master/sandbox-template)
+We know developers are rightly skeptical of third-party widgets, so we set up a live CodeSandbox where you can see exactly how much code it takes to implement and play the games right in the browser: [https://codesandbox.io/s/github/papiliokate/conversionhub-integration-examples/tree/master/sandbox-template](https://codesandbox.io/s/github/papiliokate/conversionhub-integration-examples/tree/master/sandbox-template)
 
 I'd love to hear your feedback on the architecture, the game mechanics, or any edge cases we might have missed!
