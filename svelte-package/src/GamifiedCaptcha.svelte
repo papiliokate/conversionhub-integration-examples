@@ -3,7 +3,10 @@
 
   export let siteKey = "ch_pub_demo_testkey_12345";
   export let gameUrl = "https://conversion.business/sunny-day-maze/";
-  export let className = "conversion-business-widget";
+  
+  let className = "conversion-business-widget";
+  export { className as class };
+  
   export let style = "";
 
   const dispatch = createEventDispatcher();
@@ -12,7 +15,7 @@
   const staticSiteKey = siteKey;
   const staticGameUrl = gameUrl;
   
-  const isInvalidKey = !staticSiteKey || staticSiteKey === "ch_pub_demo_testkey_12345";
+  const isInvalidKey = !staticSiteKey;
   const computedUrl = `${staticGameUrl}?mode=captcha&clientId=${staticSiteKey}`;
 
   function verificationHandler(event) {
@@ -40,11 +43,12 @@
 </script>
 
 {#if isInvalidKey}
-  <div class={className} style="color: #d32f2f; border: 1px solid #d32f2f; padding: 12px; border-radius: 4px; background-color: #fff; font-family: sans-serif; {style}">
+  <div {...$$restProps} class={className} style="color: #d32f2f; border: 1px solid #d32f2f; padding: 12px; border-radius: 4px; background-color: #fff; font-family: sans-serif; {style}">
     <strong>Widget Error:</strong> Valid API Key Required. <a href="https://conversion.business" target="_blank" rel="noopener noreferrer" style="color: #d32f2f; text-decoration: underline;">Get your free key here</a>.
   </div>
 {:else}
   <iframe 
+    {...$$restProps}
     class={className}
     src={computedUrl}
     style="width: 100%; height: 400px; border: none; border-radius: 12px; {style}"

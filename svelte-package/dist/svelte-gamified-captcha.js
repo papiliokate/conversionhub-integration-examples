@@ -1,120 +1,149 @@
-import { SvelteComponent as k, init as x, safe_not_equal as K, noop as b, detach as _, insert as y, empty as C, attr as o, append as c, element as u, text as h, set_style as v, src_url_equal as I } from "svelte/internal";
-import { createEventDispatcher as U, onMount as E, onDestroy as N } from "svelte";
-const S = "4";
-typeof window < "u" && (window.__svelte || (window.__svelte = { v: /* @__PURE__ */ new Set() })).v.add(S);
-function P(a) {
-  let e, n, l;
+import { SvelteComponent as E, init as P, safe_not_equal as S, compute_rest_props as k, assign as m, exclude_internal_props as V, noop as w, detach as b, insert as v, empty as B, set_attributes as y, get_spread_update as U, append as u, element as _, text as K, attr as p, set_style as C } from "svelte/internal";
+import { createEventDispatcher as G, onMount as L, onDestroy as q } from "svelte";
+const A = "4";
+typeof window < "u" && (window.__svelte || (window.__svelte = { v: /* @__PURE__ */ new Set() })).v.add(A);
+function D(n) {
+  let e, r, d, i = [
+    /*$$restProps*/
+    n[4],
+    { class: (
+      /*className*/
+      n[0]
+    ) },
+    {
+      src: r = /*computedUrl*/
+      n[3]
+    },
+    {
+      style: d = "width: 100%; height: 400px; border: none; border-radius: 12px; " + /*style*/
+      n[1]
+    },
+    { title: "Conversion.Business Validation" }
+  ], s = {};
+  for (let t = 0; t < i.length; t += 1)
+    s = m(s, i[t]);
   return {
     c() {
-      e = u("iframe"), o(
-        e,
-        "class",
-        /*className*/
-        a[0]
-      ), I(e.src, n = /*computedUrl*/
-      a[3]) || o(e, "src", n), o(e, "style", l = "width: 100%; height: 400px; border: none; border-radius: 12px; " + /*style*/
-      a[1]), o(e, "title", "Conversion.Business Validation");
+      e = _("iframe"), y(e, s);
     },
-    m(t, i) {
-      y(t, e, i);
+    m(t, a) {
+      v(t, e, a);
     },
-    p(t, i) {
-      i & /*className*/
-      1 && o(
-        e,
-        "class",
-        /*className*/
-        t[0]
-      ), i & /*style*/
-      2 && l !== (l = "width: 100%; height: 400px; border: none; border-radius: 12px; " + /*style*/
-      t[1]) && o(e, "style", l);
+    p(t, a) {
+      y(e, s = U(i, [
+        a & /*$$restProps*/
+        16 && /*$$restProps*/
+        t[4],
+        a & /*className*/
+        1 && { class: (
+          /*className*/
+          t[0]
+        ) },
+        { src: r },
+        a & /*style*/
+        2 && d !== (d = "width: 100%; height: 400px; border: none; border-radius: 12px; " + /*style*/
+        t[1]) && { style: d },
+        { title: "Conversion.Business Validation" }
+      ]));
     },
     d(t) {
-      t && _(e);
+      t && b(e);
     }
   };
 }
-function V(a) {
-  let e, n, l, t, i, s;
+function N(n) {
+  let e, r, d, i, s, t, a = [
+    /*$$restProps*/
+    n[4],
+    { class: (
+      /*className*/
+      n[0]
+    ) },
+    {
+      style: t = "color: #d32f2f; border: 1px solid #d32f2f; padding: 12px; border-radius: 4px; background-color: #fff; font-family: sans-serif; " + /*style*/
+      n[1]
+    }
+  ], c = {};
+  for (let l = 0; l < a.length; l += 1)
+    c = m(c, a[l]);
   return {
     c() {
-      e = u("div"), n = u("strong"), n.textContent = "Widget Error:", l = h(" Valid API Key Required. "), t = u("a"), t.textContent = "Get your free key here", i = h("."), o(t, "href", "https://conversion.business"), o(t, "target", "_blank"), o(t, "rel", "noopener noreferrer"), v(t, "color", "#d32f2f"), v(t, "text-decoration", "underline"), o(
-        e,
-        "class",
-        /*className*/
-        a[0]
-      ), o(e, "style", s = "color: #d32f2f; border: 1px solid #d32f2f; padding: 12px; border-radius: 4px; background-color: #fff; font-family: sans-serif; " + /*style*/
-      a[1]);
+      e = _("div"), r = _("strong"), r.textContent = "Widget Error:", d = K(" Valid API Key Required. "), i = _("a"), i.textContent = "Get your free key here", s = K("."), p(i, "href", "https://conversion.business"), p(i, "target", "_blank"), p(i, "rel", "noopener noreferrer"), C(i, "color", "#d32f2f"), C(i, "text-decoration", "underline"), y(e, c);
     },
-    m(d, f) {
-      y(d, e, f), c(e, n), c(e, l), c(e, t), c(e, i);
+    m(l, f) {
+      v(l, e, f), u(e, r), u(e, d), u(e, i), u(e, s);
     },
-    p(d, f) {
-      f & /*className*/
-      1 && o(
-        e,
-        "class",
-        /*className*/
-        d[0]
-      ), f & /*style*/
-      2 && s !== (s = "color: #d32f2f; border: 1px solid #d32f2f; padding: 12px; border-radius: 4px; background-color: #fff; font-family: sans-serif; " + /*style*/
-      d[1]) && o(e, "style", s);
+    p(l, f) {
+      y(e, c = U(a, [
+        f & /*$$restProps*/
+        16 && /*$$restProps*/
+        l[4],
+        f & /*className*/
+        1 && { class: (
+          /*className*/
+          l[0]
+        ) },
+        f & /*style*/
+        2 && t !== (t = "color: #d32f2f; border: 1px solid #d32f2f; padding: 12px; border-radius: 4px; background-color: #fff; font-family: sans-serif; " + /*style*/
+        l[1]) && { style: t }
+      ]));
     },
-    d(d) {
-      d && _(e);
+    d(l) {
+      l && b(e);
     }
   };
 }
-function q(a) {
+function R(n) {
   let e;
-  function n(i, s) {
+  function r(s, t) {
     return (
       /*isInvalidKey*/
-      i[2] ? V : P
+      s[2] ? N : D
     );
   }
-  let t = n(a)(a);
+  let i = r(n)(n);
   return {
     c() {
-      t.c(), e = C();
+      i.c(), e = B();
     },
-    m(i, s) {
-      t.m(i, s), y(i, e, s);
+    m(s, t) {
+      i.m(s, t), v(s, e, t);
     },
-    p(i, [s]) {
-      t.p(i, s);
+    p(s, [t]) {
+      i.p(s, t);
     },
-    i: b,
-    o: b,
-    d(i) {
-      i && _(e), t.d(i);
+    i: w,
+    o: w,
+    d(s) {
+      s && b(e), i.d(s);
     }
   };
 }
-function B(a, e, n) {
-  let { siteKey: l = "ch_pub_demo_testkey_12345" } = e, { gameUrl: t = "https://conversion.business/sunny-day-maze/" } = e, { className: i = "conversion-business-widget" } = e, { style: s = "" } = e;
-  const d = U(), f = l, w = t, m = !f || f === "ch_pub_demo_testkey_12345", g = `${w}?mode=captcha&clientId=${f}`;
-  function p(r) {
-    r.data && r.data.type === "oops_captcha_solved" && r.data.payload && d("humanVerified", r.data.payload);
+function z(n, e, r) {
+  const d = ["siteKey", "gameUrl", "class", "style"];
+  let i = k(e, d), { siteKey: s = "ch_pub_demo_testkey_12345" } = e, { gameUrl: t = "https://conversion.business/sunny-day-maze/" } = e, { class: a = "conversion-business-widget" } = e, { style: c = "" } = e;
+  const l = G(), f = s, x = t, g = !f, I = `${x}?mode=captcha&clientId=${f}`;
+  function h(o) {
+    o.data && o.data.type === "oops_captcha_solved" && o.data.payload && l("humanVerified", o.data.payload);
   }
-  return E(() => {
-    m && console.error("Conversion.Business Error: Invalid Site Key. Please register at https://conversion.business to obtain a valid API key."), typeof window < "u" && window.addEventListener("message", p);
-  }), N(() => {
-    typeof window < "u" && window.removeEventListener("message", p);
-  }), a.$$set = (r) => {
-    "siteKey" in r && n(4, l = r.siteKey), "gameUrl" in r && n(5, t = r.gameUrl), "className" in r && n(0, i = r.className), "style" in r && n(1, s = r.style);
-  }, [i, s, m, g, l, t];
+  return L(() => {
+    g && console.error("Conversion.Business Error: Invalid Site Key. Please register at https://conversion.business to obtain a valid API key."), typeof window < "u" && window.addEventListener("message", h);
+  }), q(() => {
+    typeof window < "u" && window.removeEventListener("message", h);
+  }), n.$$set = (o) => {
+    e = m(m({}, e), V(o)), r(4, i = k(e, d)), "siteKey" in o && r(5, s = o.siteKey), "gameUrl" in o && r(6, t = o.gameUrl), "class" in o && r(0, a = o.class), "style" in o && r(1, c = o.style);
+  }, [a, c, g, I, i, s, t];
 }
-class A extends k {
+class O extends E {
   constructor(e) {
-    super(), x(this, e, B, q, K, {
-      siteKey: 4,
-      gameUrl: 5,
-      className: 0,
+    super(), P(this, e, z, R, S, {
+      siteKey: 5,
+      gameUrl: 6,
+      class: 0,
       style: 1
     });
   }
 }
 export {
-  A as GamifiedCaptcha
+  O as GamifiedCaptcha
 };
