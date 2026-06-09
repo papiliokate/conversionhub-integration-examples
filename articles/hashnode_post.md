@@ -89,6 +89,6 @@ For users utilizing screen readers, the widget includes a strictly rate-limited,
 
 To see the game mechanics in action and test the implementation without installing anything locally, you can view the live CodeSandbox template here: 
 
-**[Live CodeSandbox Demo](https://codesandbox.io/s/github/papiliokate/conversionhub-integration-examples/tree/master/sandbox-template)**
+**[Live CodeSandbox Demo](https://codesandbox.io/s/github/oops-games-llc/conversionhub-integration-examples/tree/master/sandbox-template)**
 
-You can find the full source code for the NPM package in the [official integration repository](https://github.com/papiliokate/conversionhub-integration-examples).
+You can find the full source code for the NPM package in the [official integration repository](https://github.com/oops-games-llc/conversionhub-integration-examples).
