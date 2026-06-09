@@ -1,0 +1,36 @@
+{
+  "name": "svelte-gamified-captcha",
+  "version": "1.0.0",
+  "description": "A gamified, frictionless captcha component for Svelte. Powered by conversion.business.",
+  "type": "module",
+  "types": "index.d.ts",
+  "main": "./dist/svelte-gamified-captcha.umd.cjs",
+  "module": "./dist/svelte-gamified-captcha.js",
+  "svelte": "./src/index.js",
+  "exports": {
+    ".": {
+      "svelte": "./src/index.js",
+      "import": "./dist/svelte-gamified-captcha.js",
+      "require": "./dist/svelte-gamified-captcha.umd.cjs",
+      "types": "./index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "svelte": "^4.0.0 || ^5.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.0",
+    "svelte": "^4.2.0",
+    "vite": "^5.0.0"
+  },
+  "author": "conversion.business",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oops-games-llc/conversionhub-integration-examples.git",
+    "directory": "svelte-package"
+  }
+}
