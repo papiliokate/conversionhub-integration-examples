@@ -1,0 +1,34 @@
+{
+  "name": "vue-gamified-captcha",
+  "version": "1.0.0",
+  "description": "A gamified, frictionless captcha component for Vue 3. Powered by conversion.business.",
+  "type": "module",
+  "types": "index.d.ts",
+  "main": "./dist/vue-gamified-captcha.umd.cjs",
+  "module": "./dist/vue-gamified-captcha.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-gamified-captcha.js",
+      "require": "./dist/vue-gamified-captcha.umd.cjs",
+      "types": "./index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0",
+    "vue": "^3.2.0"
+  },
+  "author": "conversion.business",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oops-games-llc/conversionhub-integration-examples.git",
+    "directory": "vue-package"
+  }
+}
