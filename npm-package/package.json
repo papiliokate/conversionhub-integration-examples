@@ -1,6 +1,6 @@
 {
   "name": "react-gamified-captcha",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A gamified, frictionless captcha component for React. Powered by conversion.business.",
   "type": "module",
   "main": "./dist/react-gamified-captcha.umd.cjs",
@@ -14,6 +14,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oops-games-llc/conversionhub-integration-examples.git"
+  },
   "scripts": {
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,9 +35,5 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.2",
-    "vite": "^8.0.16"
   }
 }
