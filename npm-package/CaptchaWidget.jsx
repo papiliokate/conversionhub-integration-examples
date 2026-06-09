@@ -5,9 +5,10 @@ export const GamifiedCaptcha = ({
   onHumanVerified,
   gameUrl = "https://conversion.business/sunny-day-maze/",
   className = "conversion-business-widget",
-  style = {}
+  style = {},
+  ...rest
 }) => {
-  const isInvalidKey = !siteKey || siteKey === "ch_pub_demo_testkey_12345";
+  const isInvalidKey = !siteKey;
 
   useEffect(() => {
     // SSR Safety Check
@@ -39,7 +40,7 @@ export const GamifiedCaptcha = ({
   // Visual Fallback for missing/demo keys (The Funnel Trap)
   if (isInvalidKey) {
     return (
-      <div style={{ color: '#d32f2f', border: '1px solid #d32f2f', padding: '12px', borderRadius: '4px', backgroundColor: '#fff', fontFamily: 'sans-serif', ...style }} className={className}>
+      <div {...rest} style={{ color: '#d32f2f', border: '1px solid #d32f2f', padding: '12px', borderRadius: '4px', backgroundColor: '#fff', fontFamily: 'sans-serif', ...style }} className={className}>
         <strong>Widget Error:</strong> Valid API Key Required. <a href="https://conversion.business" target="_blank" rel="noopener noreferrer" style={{color: '#d32f2f', textDecoration: 'underline'}}>Get your free key here</a>.
       </div>
     );
@@ -48,6 +49,7 @@ export const GamifiedCaptcha = ({
   // Exact iframe architecture matching portal.html
   return (
     <iframe 
+      {...rest}
       className={className}
       src={`${gameUrl}?mode=captcha&clientId=${siteKey}`} 
       style={{ width: "100%", height: "400px", border: "none", borderRadius: "12px", ...style }}
