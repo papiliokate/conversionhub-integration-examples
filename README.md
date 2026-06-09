@@ -1,5 +1,7 @@
 # ConversionHub Integration Examples
 
+[![Edit Sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/oops-games-llc/conversionhub-integration-examples/tree/master/sandbox-template)
+
 Welcome to the official integration examples for **ConversionHub**.
 
 ConversionHub is the premier **gamified alternative to reCAPTCHA**. We replace high-friction, traditional captchas with engaging, frictionless bot protection that actively increases conversion rates for B2B and B2C platforms.

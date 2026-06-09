@@ -1,1 +1,1 @@
-export { GamifiedCaptcha } from './CaptchaWidget.js';
+export { GamifiedCaptcha } from './CaptchaWidget.jsx';

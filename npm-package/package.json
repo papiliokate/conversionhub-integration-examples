@@ -1,9 +1,21 @@
 {
   "name": "react-gamified-captcha",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A gamified, frictionless captcha component for React. Powered by conversion.business.",
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/react-gamified-captcha.umd.cjs",
+  "module": "./dist/react-gamified-captcha.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-gamified-captcha.js",
+      "require": "./dist/react-gamified-captcha.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,5 +31,9 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "vite": "^8.0.16"
   }
 }

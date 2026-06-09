@@ -1,5 +1,7 @@
 # react-gamified-captcha
 
+[![Edit Sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/oops-games-llc/conversionhub-integration-examples/tree/master/sandbox-template)
+
 A gamified alternative to traditional captchas for React applications. Say goodbye to frustrating traffic lights and blurry crosswalks.
 
 ## Important: API Key Required
