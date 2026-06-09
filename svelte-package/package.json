@@ -4,14 +4,14 @@
   "description": "A gamified, frictionless captcha component for Svelte. Powered by conversion.business.",
   "type": "module",
   "types": "index.d.ts",
-  "main": "./dist/svelte-gamified-captcha.umd.cjs",
-  "module": "./dist/svelte-gamified-captcha.js",
-  "svelte": "./src/index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "svelte": "src/index.js",
   "exports": {
     ".": {
       "svelte": "./src/index.js",
-      "import": "./dist/svelte-gamified-captcha.js",
-      "require": "./dist/svelte-gamified-captcha.umd.cjs",
+      "import": "./src/index.js",
+      "require": "./src/index.js",
       "types": "./index.d.ts"
     }
   },
