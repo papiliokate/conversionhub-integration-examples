@@ -1,5 +1,7 @@
 # vue-gamified-captcha
 
+> **⚠️ MIGRATION TO v2.0.0:** Version 2.0.0 introduces a mandatory security patch for cryptographic backend verification. The `humanVerified` event now emits an object `{ payload, signature }` instead of a JSON string. Please update your event handlers accordingly.
+
 A gamified alternative to traditional captchas for Vue applications. Say goodbye to frustrating traffic lights and blurry crosswalks.
 
 ## Important: API Key Required

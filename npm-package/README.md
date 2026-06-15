@@ -2,6 +2,8 @@
 
 [![Edit Sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/oops-games-llc/conversionhub-integration-examples/tree/master/sandbox-template)
 
+> **⚠️ MIGRATION TO v2.0.0:** Version 2.0.0 introduces a mandatory security patch for cryptographic backend verification. The `onHumanVerified` event now emits an object `{ payload, signature }` instead of a JSON string. Please update your event handlers accordingly.
+
 A gamified alternative to traditional captchas for React applications. Say goodbye to frustrating traffic lights and blurry crosswalks.
 
 ## Important: API Key Required
