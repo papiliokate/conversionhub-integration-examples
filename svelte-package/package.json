@@ -1,7 +1,7 @@
 {
   "name": "svelte-gamified-captcha",
-  "version": "1.0.4",
-  "description": "A gamified, frictionless captcha component for Svelte. Powered by conversion.business.",
+  "version": "2.0.0",
+  "description": "Zero-friction gamified CAPTCHA alternative for Svelte",
   "type": "module",
   "types": "index.d.ts",
   "main": "src/index.js",

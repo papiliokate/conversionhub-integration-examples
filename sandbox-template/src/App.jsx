@@ -6,10 +6,10 @@ function App() {
   const [isVerified, setIsVerified] = useState(false);
   const [token, setToken] = useState(null);
 
-  const handleVerify = (verificationToken) => {
+  const handleVerify = (verificationData) => {
     setIsVerified(true);
-    setToken(verificationToken);
-    console.log("Verified! Token:", verificationToken);
+    setToken(JSON.stringify(verificationData, null, 2));
+    console.log("Verified! Data:", verificationData);
   };
 
   return (

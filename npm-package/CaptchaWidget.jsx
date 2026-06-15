@@ -24,7 +24,7 @@ export const GamifiedCaptcha = ({
       // Ensure we only process events from the conversion.business iframe
       if (event.data && event.data.type === 'oops_captcha_solved') {
         if (onHumanVerified && event.data.payload) {
-          onHumanVerified(event.data.payload);
+          onHumanVerified({ payload: event.data.payload, signature: event.data.signature });
         }
       }
     };

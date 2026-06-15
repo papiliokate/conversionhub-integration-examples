@@ -37,7 +37,7 @@ const computedGameUrl = computed(() => `${staticGameUrl.value}?mode=captcha&clie
 const verificationHandler = (event) => {
   if (event.data && event.data.type === 'oops_captcha_solved') {
     if (event.data.payload) {
-      emit('humanVerified', event.data.payload);
+      emit('humanVerified', { payload: event.data.payload, signature: event.data.signature });
     }
   }
 };

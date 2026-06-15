@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConversionHub Gamified Captcha Alternative Example</title>
-    <!-- Include the ConversionHub script -->
-    <script src="https://conversion-business-widgets.web.app/sdk.js" async defer></script>
 </head>
 <body>
 
@@ -18,25 +16,37 @@
         <br><br>
 
         <!-- The ConversionHub Widget Container -->
-        <div class="conversionhub-widget" data-sitekey="ch_pub_demo_testkey_12345" data-theme="light"></div>
+        <div style="width: 100%; max-width: 400px; height: 400px;">
+            <iframe src="https://conversion.business/sunny-day-maze/?mode=captcha&clientId=ch_pub_demo_testkey_12345" style="width:100%; height:100%; border:none; border-radius:12px;"></iframe>
+        </div>
         <br>
 
         <button type="submit" id="submit-btn" disabled>Submit Securely</button>
     </form>
 
     <script>
-        // Listen for the verification success event from the gamified widget
-        document.addEventListener('conversionhub:verified', function(event) {
-            console.log('User verified with token:', event.detail.token);
-            // Append the token to the form for backend validation
-            const hiddenInput = document.createElement('input');
-            hiddenInput.type = 'hidden';
-            hiddenInput.name = 'ch-token';
-            hiddenInput.value = event.detail.token;
-            document.getElementById('signup-form').appendChild(hiddenInput);
-            
-            // Enable the submit button
-            document.getElementById('submit-btn').disabled = false;
+        // Listen for the verification success event from the iframe
+        window.addEventListener('message', async (event) => {
+            if (event.data && event.data.type === 'oops_captcha_solved') {
+                const { payload, signature } = event.data;
+                console.log('User verified. Payload:', payload, 'Signature:', signature);
+                
+                // Append the data to the form for backend validation
+                const hiddenPayload = document.createElement('input');
+                hiddenPayload.type = 'hidden';
+                hiddenPayload.name = 'ch-payload';
+                hiddenPayload.value = payload;
+                document.getElementById('signup-form').appendChild(hiddenPayload);
+                
+                const hiddenSignature = document.createElement('input');
+                hiddenSignature.type = 'hidden';
+                hiddenSignature.name = 'ch-signature';
+                hiddenSignature.value = signature;
+                document.getElementById('signup-form').appendChild(hiddenSignature);
+                
+                // Enable the submit button
+                document.getElementById('submit-btn').disabled = false;
+            }
         });
     </script>
 

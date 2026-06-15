@@ -21,7 +21,7 @@
   function verificationHandler(event) {
     if (event.data && event.data.type === 'oops_captcha_solved') {
       if (event.data.payload) {
-        dispatch('humanVerified', event.data.payload);
+        dispatch('humanVerified', { payload: event.data.payload, signature: event.data.signature });
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "name": "vue-gamified-captcha",
-  "version": "1.0.4",
-  "description": "A gamified, frictionless captcha component for Vue. Powered by conversion.business.",
+  "version": "2.0.0",
+  "description": "Zero-friction gamified CAPTCHA alternative for Vue",
   "type": "module",
   "types": "index.d.ts",
   "main": "./dist/vue-gamified-captcha.umd.cjs",
