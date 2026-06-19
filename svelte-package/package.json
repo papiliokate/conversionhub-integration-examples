@@ -1,6 +1,6 @@
 {
   "name": "svelte-gamified-captcha",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Zero-friction gamified CAPTCHA alternative for Svelte",
   "type": "module",
   "types": "index.d.ts",
@@ -17,7 +17,9 @@
   },
   "files": [
     "src",
-    "index.d.ts"
+    "index.d.ts",
+    "llms.txt",
+    ".cursorrules"
   ],
   "scripts": {
     "build": "vite build"

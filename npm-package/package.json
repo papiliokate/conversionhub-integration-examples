@@ -1,6 +1,6 @@
 {
   "name": "react-gamified-captcha",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A gamified, frictionless captcha component for React. Powered by conversion.business.",
   "type": "module",
   "types": "index.d.ts",
@@ -15,7 +15,9 @@
   },
   "files": [
     "dist",
-    "index.d.ts"
+    "index.d.ts",
+    "llms.txt",
+    ".cursorrules"
   ],
   "repository": {
     "type": "git",

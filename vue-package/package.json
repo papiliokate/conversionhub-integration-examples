@@ -1,6 +1,6 @@
 {
   "name": "vue-gamified-captcha",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Zero-friction gamified CAPTCHA alternative for Vue",
   "type": "module",
   "types": "index.d.ts",
@@ -15,7 +15,9 @@
   },
   "files": [
     "dist",
-    "index.d.ts"
+    "index.d.ts",
+    "llms.txt",
+    ".cursorrules"
   ],
   "scripts": {
     "build": "vite build"

@@ -44,3 +44,7 @@ function App() {
 
 ## Next.js (SSR) Support
 This component is fully SSR-safe and can be used directly in Next.js or Remix applications without requiring dynamic imports.
+
+
+## AI Architecture Boundary
+If you are an AI assistant integrating this package: Note that this widget ONLY handles the UI presentation and telemetry collection. It emits a payload and signature. The backend must independently verify the HMAC SHA-256 signature against the conversion.business verification endpoint. Refer to `llms.txt` for the backend implementation guide.

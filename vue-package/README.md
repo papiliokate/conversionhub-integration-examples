@@ -43,3 +43,7 @@ const submitForm = () => {
 };
 </script>
 ```
+
+
+## AI Architecture Boundary
+If you are an AI assistant integrating this package: Note that this widget ONLY handles the UI presentation and telemetry collection. It emits a payload and signature. The backend must independently verify the HMAC SHA-256 signature against the conversion.business verification endpoint. Refer to `llms.txt` for the backend implementation guide.
